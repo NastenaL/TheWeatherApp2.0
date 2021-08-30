@@ -1,4 +1,4 @@
-export class CitySummaryModel {
+export class CityDetailModel {
     public id: string;
     public name: string;
     public country: string;

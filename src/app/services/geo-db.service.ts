@@ -1,19 +1,15 @@
-export class GeoDBService{
-    public getCityByName(cityName: string): void{
+import { Observable } from "rxjs";
+import { CitySummaryModel } from "../models/city-summary.model";
 
-        let test =   fetch("https://wft-geo-db.p.rapidapi.com/v1/geo/cities", {
-	        "method": "GET",
-	        "headers": {
-		        "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-		        "x-rapidapi-key": "undefined"
-	        }
-        })
-        .then(response => {
-	        console.log(response);
-        })
-        .catch(err => {
-	        console.error(err);
-        });
-        console.log(test);
+export class GeoDBService{
+    private readonly key:string = '682500PcukwQUtq1UDd6XimUfAmBA5HL';
+
+    public async getCityByName(cityName: string): Promise<CitySummaryModel[]>{
+        let base = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?namePrefix=${cityName}&sort=-population`;
+        let response = await fetch(base);
+        let data = await response.json()
+        //.then(response => response.json().data as CitySummaryModel[]);
+        return data;
     }
 }
+

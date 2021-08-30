@@ -1,4 +1,4 @@
-export class CitySummaryModel {
+export class HourlyWeatherModel {
     public temperature: string;
     public humidity: string;
     public image: string;

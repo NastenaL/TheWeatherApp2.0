@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { from, Observable, pipe } from 'rxjs';
+import { CitySummaryModel } from 'src/app/models/city-summary.model';
 import { GeoDBService } from 'src/app/services/geo-db.service';
 
 @Component({
@@ -7,22 +10,15 @@ import { GeoDBService } from 'src/app/services/geo-db.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent{
-data: string ="";
+  
+  public readonly searchTermControl: FormControl = new FormControl('');
+  
   constructor(private readonly geoDBService: GeoDBService) {}
 
-  public getCityByName(): void{
-   // let cityName: string = 'Sloviansk';
-    getCity(this.data);
-    //this.geoDBService.getCityByName(cityName);
+  public async getCityByName(): Promise<void>{
+    let res = new Array<CitySummaryModel>();
+    let searchResult = this.geoDBService.getCityByName(this.searchTermControl.value);
+
+    console.log(searchResult);    
   }
-}
-
-const key:string = '682500PcukwQUtq1UDd6XimUfAmBA5HL';
-const getCity = async (city:string) => {
-const base = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?namePrefix=${city}&sort=-population`;
-
-const response = await fetch(base);
-const data = await response.json();
-
-console.log(data);
 }
