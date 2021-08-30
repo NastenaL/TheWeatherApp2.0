@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import {AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent} from '../app/index'
+import {AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, GeoDBService} from '../app/index'
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComp
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot()
   ],
-  providers: [],
+  providers: [GeoDBService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

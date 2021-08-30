@@ -3,5 +3,9 @@
 
     <input 
         autoFocus
-        class="searchInput"/>
+        class="searchInput"
+        minlength ="1"
+        maxlength = "20"
+        (keyup.enter)="getCityByName()"
+    />
 </div>
