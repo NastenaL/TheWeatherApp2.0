@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.selectors';
 
 @Component({
-  selector: 'app-search-result',
+  selector: 'wa-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })

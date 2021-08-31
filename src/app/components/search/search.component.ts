@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import {SearchCitiesActions} from 'src/app/store/search-cities.actions'
 
 @Component({
-  selector: 'search',
+  selector: 'wa-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
