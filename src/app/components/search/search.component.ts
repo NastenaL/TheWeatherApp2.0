@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { from, Observable, pipe } from 'rxjs';
-import { CitySummaryModel } from 'src/app/models/city-summary.model';
-import { GeoDBService } from 'src/app/services/geo-db.service';
+import { Store } from '@ngrx/store';
+import {SearchCitiesActions} from 'src/app/store/search-cities.actions'
 
 @Component({
   selector: 'search',
@@ -13,12 +12,9 @@ export class SearchComponent{
   
   public readonly searchTermControl: FormControl = new FormControl('');
   
-  constructor(private readonly geoDBService: GeoDBService) {}
+  constructor(private readonly store: Store) {}
 
-  public async getCityByName(): Promise<void>{
-    let res = new Array<CitySummaryModel>();
-    let searchResult = this.geoDBService.getCityByName(this.searchTermControl.value);
-
-    console.log(searchResult);    
-  }
+  public getCityByName(): void{
+    this.store.dispatch(SearchCitiesActions.Load({searchTerm: this.searchTermControl.value}));
+    }
 }
