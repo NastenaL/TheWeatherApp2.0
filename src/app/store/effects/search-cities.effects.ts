@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap } from "rxjs/operators";
+import { map, mergeMap } from "rxjs/operators";
 import { GeoDBService } from "src/app/services/geo-db.service";
-import { SearchCitiesActions } from "../search-cities.actions";
+import { SearchCitiesActions } from "../actions/search-cities.actions";
 
 @Injectable()
 export class SearchCitiesEffects{

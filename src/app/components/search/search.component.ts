@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import {SearchCitiesActions} from 'src/app/store/search-cities.actions'
+import {SearchCitiesActions} from 'src/app/store/actions/search-cities.actions'
 
 @Component({
   selector: 'wa-search',

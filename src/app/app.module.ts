@@ -11,13 +11,17 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { actionReducerMap } from './store/main.reducer';
 import { SearchCitiesEffects } from './store/effects/search-cities.effects';
+import { CityOverviewComponent } from './components/city-overview/city-overview.component';
+import { SearchContainerComponent } from './components/search-container/search-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     HeaderComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    CityOverviewComponent,
+    SearchContainerComponent
   ],
   imports: [
     BrowserModule,
