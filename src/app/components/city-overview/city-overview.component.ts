@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
 
 @Component({
   selector: 'wa-city-overview',
   templateUrl: './city-overview.component.html',
   styleUrls: ['./city-overview.component.css']
 })
-export class CityOverviewComponent implements OnInit {
+export class CityOverviewComponent {
 
-  constructor() { }
+  public readonly coords = this.store.select(cityOverviewSelector.selectCoordinates);
 
-  ngOnInit(): void {
+  constructor(private readonly store: Store) {
+    console.log("coords"+this.coords);
   }
 
 }

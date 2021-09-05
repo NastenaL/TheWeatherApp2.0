@@ -10,10 +10,10 @@ export class CityOverviewEffects{
 constructor(private readonly actions$: Actions, private readonly openWeatherService : OpenWeatherService){}
 
 getWeather$ = createEffect(() => this.actions$.pipe(
-    ofType(CityOverviewActions.GetCoordinates),
-    mergeMap((props) => this.openWeatherService.getWeatherByCity(props.lat, props.lon)
+    ofType(CityOverviewActions.LoadCity),
+    mergeMap((props) => this.openWeatherService.getWeatherByCity(props.coordinate)
       .pipe(
-        map(cityOverview => { return CityOverviewActions.GetWether({cityOverview})})
+        map(cityOverview => { return CityOverviewActions.LoadWeather({cityOverview})})
       ))
     )
   );

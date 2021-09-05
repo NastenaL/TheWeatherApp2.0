@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CityOverviewResponse } from "../interfaces/city-overview-response.interface";
 import { CityOverview } from "../interfaces/city-overview.interface";
+import { Coordinate } from "../interfaces/coordinate.interface";
 
 @Injectable({providedIn: "root"})
 export class OpenWeatherService{
@@ -11,8 +12,8 @@ export class OpenWeatherService{
 
     constructor(private readonly httpClient: HttpClient){}
 
-    public getWeatherByCity(lat: number, lon: number): Observable<CityOverview>{
-        let base = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current&appid=${this.key}`;
+    public getWeatherByCity(coordinate: Coordinate): Observable<CityOverview>{
+        let base = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat}&lon=${coordinate.lon}&exclude=current&appid=${this.key}`;
 
         return this.httpClient.get<CityOverviewResponse>(base).pipe(map((response) => {
             return response.data;

@@ -13,6 +13,7 @@ import { actionReducerMap } from './store/main.reducer';
 import { SearchCitiesEffects } from './store/effects/search-cities.effects';
 import { CityOverviewComponent } from './components/city-overview/city-overview.component';
 import { SearchContainerComponent } from './components/search-container/search-container.component';
+import { CityOverviewEffects } from './store/effects/city-overview.effects';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { SearchContainerComponent } from './components/search-container/search-c
     StoreModule.forRoot(actionReducerMap),
     RouterModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([SearchCitiesEffects]),
+    EffectsModule.forRoot([SearchCitiesEffects, CityOverviewEffects]),
     StoreRouterConnectingModule.forRoot(),
     ReactiveFormsModule
   ],

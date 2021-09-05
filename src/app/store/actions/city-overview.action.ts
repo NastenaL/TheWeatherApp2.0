@@ -1,14 +1,15 @@
 import { createAction, props } from "@ngrx/store";
+import { Coordinate } from "src/app/interfaces/coordinate.interface";
 import { CityOverview } from "../../interfaces/city-overview.interface";
 
-const GetCoordinates = createAction(
+const LoadCity = createAction(
     '[City] coordinates',
-    props<{lat: number, lon: number}>()
+    props<{coordinate: Coordinate}>()
 );
 
-const GetWether  = createAction(
+const LoadWeather  = createAction(
     '[City overview] get success',
     props<{cityOverview: CityOverview}>()
 );
 
-export const CityOverviewActions = {GetWether, GetCoordinates};
+export const CityOverviewActions = {LoadWeather, LoadCity};
