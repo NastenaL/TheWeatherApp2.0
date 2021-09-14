@@ -1,10 +1,10 @@
 import { createAction, props } from "@ngrx/store";
-import { Coordinate } from "src/app/interfaces/coordinate.interface";
+import { City } from "src/app/interfaces/city.interface";
 import { CityOverview } from "../../interfaces/city-overview.interface";
 
 const LoadCity = createAction(
-    '[City] coordinates',
-    props<{coordinate: Coordinate}>()
+    '[City] load',
+    props<{city: City}>()
 );
 
 const LoadWeather  = createAction(

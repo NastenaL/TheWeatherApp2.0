@@ -11,7 +11,7 @@ constructor(private readonly actions$: Actions, private readonly openWeatherServ
 
 getWeather$ = createEffect(() => this.actions$.pipe(
     ofType(CityOverviewActions.LoadCity),
-    mergeMap((props) => this.openWeatherService.getWeatherByCity(props.coordinate)
+    mergeMap((props) => this.openWeatherService.getWeatherByCity(props.city.latitude, props.city.longitude)
       .pipe(
         map(cityOverview => { return CityOverviewActions.LoadWeather({cityOverview})})
       ))

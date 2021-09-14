@@ -1,21 +1,21 @@
 import { Action, createReducer, on } from '@ngrx/store';
+import { City } from 'src/app/interfaces/city.interface';
 import { CityOverview } from '../../interfaces/city-overview.interface';
-import { Coordinate } from '../../interfaces/coordinate.interface';
 import {CityOverviewActions} from '../actions/city-overview.actions';
 
 export interface State {
     cityOverview: CityOverview | undefined;
-    coordinate: Coordinate | undefined;
+    city: City | undefined;
   }
 
 export const initialState: State = {
     cityOverview: undefined,
-    coordinate: undefined
+    city: undefined
   };
  
 const cityOverviewReducer = createReducer(
     initialState,
-    on(CityOverviewActions.LoadCity, (state, {coordinate})  => ({ ...state, coordinate: coordinate})),
+    on(CityOverviewActions.LoadCity, (state, {city})  => ({ ...state, city: city})),
     on(CityOverviewActions.LoadWeather, (state, { cityOverview }) => ({ ...state, cityOverview :cityOverview }))
   );
 

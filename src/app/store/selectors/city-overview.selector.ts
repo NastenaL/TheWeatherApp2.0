@@ -5,6 +5,6 @@ const selectFeature = createFeatureSelector<fromCityOverview.State>("cityOvervie
  
 const selectCoordinates = createSelector(
   selectFeature,
-  (state) => state.coordinate
+  (state) => state.city
 );
 export const cityOverviewSelector = {selectCoordinates};
