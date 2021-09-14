@@ -8,10 +8,10 @@ const routes: Routes = [
     path:'search',
     component: SearchContainerComponent
   },
-{
-  path:':id',
-  component: CityOverviewComponent
-},
+  {
+    path:':id',
+    component: CityOverviewComponent
+  },
 {
   path:'',
   redirectTo: '/search',

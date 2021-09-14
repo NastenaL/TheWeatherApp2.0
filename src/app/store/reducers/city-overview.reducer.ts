@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { CityOverview } from '../interfaces/city-overview.interface';
-import { Coordinate } from '../interfaces/coordinate.interface';
-import {CityOverviewActions} from './actions/city-overview.action';
+import { CityOverview } from '../../interfaces/city-overview.interface';
+import { Coordinate } from '../../interfaces/coordinate.interface';
+import {CityOverviewActions} from '../actions/city-overview.actions';
 
 export interface State {
     cityOverview: CityOverview | undefined;

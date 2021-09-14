@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import * as fromSearchCities from  '../search-cities.reducer';
+import * as fromSearchCities from  '../reducers/search-cities.reducer';
 
 const selectFeature = createFeatureSelector<fromSearchCities.State>("searchCities");
  

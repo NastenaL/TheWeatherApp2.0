@@ -9,7 +9,7 @@ import {AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComp
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { actionReducerMap } from './store/main.reducer';
+import { actionReducerMap } from './store/reducers/main.reducer';
 import { SearchCitiesEffects } from './store/effects/search-cities.effects';
 import { CityOverviewComponent } from './components/city-overview/city-overview.component';
 import { SearchContainerComponent } from './components/search-container/search-container.component';

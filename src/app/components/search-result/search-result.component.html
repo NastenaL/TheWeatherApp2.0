@@ -1,8 +1,6 @@
 <ul>
     <li *ngFor="let item of cities$ | async">
-        <a href="{{item.id}}" 
-        [formControl]="searchTermControl"
-        (click)="addCooridinates()">
+        <a routerLink="/{{item.id}}">
             {{item?.name}} {{item?.countryCode}} {{item?.region}}
         </a>
         <button>Add to favorites</button>

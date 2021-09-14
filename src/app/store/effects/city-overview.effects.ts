@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { map, mergeMap } from "rxjs/operators";
 import { OpenWeatherService } from "src/app/services/open-weather-app.service";
-import { CityOverviewActions } from "../actions/city-overview.action";
+import { CityOverviewActions } from "../actions/city-overview.actions";
 
 @Injectable()
 export class CityOverviewEffects{

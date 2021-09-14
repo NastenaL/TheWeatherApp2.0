@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { City } from '../interfaces/city.interface';
-import {SearchCitiesActions} from './actions/search-cities.actions';
+import { City } from '../../interfaces/city.interface';
+import {SearchCitiesActions} from '../actions/search-cities.actions';
 
 export interface State {
     searchTerm: string;
