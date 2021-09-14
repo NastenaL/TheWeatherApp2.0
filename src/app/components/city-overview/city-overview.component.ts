@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { City } from 'src/app/interfaces/city.interface';
 import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions';
-import { CityOverviewEffects } from 'src/app/store/effects/city-overview.effects';
 import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.selectors';
 
 @Component({
@@ -29,6 +26,6 @@ export class CityOverviewComponent implements OnInit{
       selectedCity = items.find(i => i.id === this.selectedItemId);
     });
 
-    this.store.dispatch(CityOverviewActions.LoadCity({city: selectedCity!}));
+    this.store.dispatch(CityOverviewActions.LoadCity({cityId: this.selectedItemId}));
    }
 }

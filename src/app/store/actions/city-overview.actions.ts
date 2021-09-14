@@ -4,7 +4,7 @@ import { CityOverview } from "../../interfaces/city-overview.interface";
 
 const LoadCity = createAction(
     '[City] load',
-    props<{city: City}>()
+    props<{cityId: number}>()
 );
 
 const LoadWeather  = createAction(

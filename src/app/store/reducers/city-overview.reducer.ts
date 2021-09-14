@@ -15,7 +15,7 @@ export const initialState: State = {
  
 const cityOverviewReducer = createReducer(
     initialState,
-    on(CityOverviewActions.LoadCity, (state, {city})  => ({ ...state, city: city})),
+    on(CityOverviewActions.LoadCity, (state, {cityId})  => ({ ...state, cityId: cityId})),
     on(CityOverviewActions.LoadWeather, (state, { cityOverview }) => ({ ...state, cityOverview :cityOverview }))
   );
 
