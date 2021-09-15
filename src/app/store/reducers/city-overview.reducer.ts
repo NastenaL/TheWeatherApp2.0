@@ -1,7 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { City } from 'src/app/interfaces/city.interface';
 import { CityOverview } from '../../interfaces/city-overview.interface';
-import {CityOverviewActions} from '../actions/city-overview.actions';
+import { CityOverviewActions } from '../actions/city-overview.actions';
 
 export interface State {
     cityOverview: CityOverview | undefined;
@@ -15,7 +14,7 @@ export const initialState: State = {
  
 const cityOverviewReducer = createReducer(
     initialState,
-    on(CityOverviewActions.LoadCityId, (state, {cityId})  => ({ ...state, cityId: cityId})),
+    on(CityOverviewActions.LoadCityId, (state)  => ({ ...state})),
     on(CityOverviewActions.LoadWeather, (state, { cityOverview }) => ({ ...state, cityOverview :cityOverview }))
   );
 

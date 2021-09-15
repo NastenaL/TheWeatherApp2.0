@@ -18,12 +18,7 @@ export class CityOverviewComponent implements OnInit{
   constructor(private readonly store: Store, private route: ActivatedRoute) {}
 
   ngOnInit() { 
-    this.route.params.subscribe(params => {
-      this.selectedItemId = parseInt(params['id']) 
-    });
+    this.store.dispatch(CityOverviewActions.LoadCityId());
 
-    this.store.dispatch(CityOverviewActions.LoadCityId({cityId: this.selectedItemId}));
-
-    this.weather$.subscribe(items => console.log(items));
    }
 }
