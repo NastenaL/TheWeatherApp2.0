@@ -11,8 +11,8 @@ import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.sele
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent  {
+export class SearchResultComponent {
   public readonly cities$ = this.store.select(searchCitiesSelector.selectCities);
-  
-  constructor(private readonly store:Store) {}
+
+  constructor(private readonly store: Store) { }
 }

@@ -5,9 +5,9 @@ const LoadCityId = createAction(
     '[CityId] load'
 );
 
-const LoadWeather  = createAction(
+const LoadWeather = createAction(
     '[City overview] get success',
-    props<{cityOverview: CityOverview}>()
+    props<{ cityOverview: CityOverview }>()
 );
 
-export const CityOverviewActions = {LoadWeather, LoadCityId};
+export const CityOverviewActions = { LoadWeather, LoadCityId };

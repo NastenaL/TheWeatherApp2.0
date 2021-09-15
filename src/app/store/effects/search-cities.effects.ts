@@ -5,16 +5,16 @@ import { GeoDBService } from "src/app/services/geo-db.service";
 import { SearchCitiesActions } from "../actions/search-cities.actions";
 
 @Injectable()
-export class SearchCitiesEffects{
+export class SearchCitiesEffects {
 
-constructor(private readonly actions$: Actions, private readonly geoDbService : GeoDBService){}
+  constructor(private readonly actions$: Actions, private readonly geoDbService: GeoDBService) { }
 
-load$ = createEffect(() => this.actions$.pipe(
+  load$ = createEffect(() => this.actions$.pipe(
     ofType(SearchCitiesActions.Load),
     mergeMap((props) => this.geoDbService.getCityByName(props.searchTerm)
       .pipe(
-        map(cities => { return SearchCitiesActions.LoadSuccess({cities})})
+        map(cities => { return SearchCitiesActions.LoadSuccess({ cities }) })
       ))
-    )
+  )
   );
 }

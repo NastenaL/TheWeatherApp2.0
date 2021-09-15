@@ -1,6 +1,5 @@
 import { City } from "./city.interface";
 
-export interface CitiesResponse
-{
+export interface CitiesResponse {
     data: City[]
 }

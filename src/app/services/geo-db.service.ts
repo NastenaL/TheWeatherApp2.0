@@ -5,13 +5,13 @@ import { debounceTime, map } from "rxjs/operators";
 import { CitiesResponse } from "../interfaces/cities-response.interface";
 import { City } from "../interfaces/city.interface";
 
-@Injectable({providedIn: "root"})
-export class GeoDBService{
-    private readonly key:string = '682500PcukwQUtq1UDd6XimUfAmBA5HL';
+@Injectable({ providedIn: "root" })
+export class GeoDBService {
+    private readonly key: string = '682500PcukwQUtq1UDd6XimUfAmBA5HL';
 
-    constructor(private readonly httpClient: HttpClient){}
+    constructor(private readonly httpClient: HttpClient) { }
 
-    public getCityByName(cityName: string): Observable<City[]>{
+    public getCityByName(cityName: string): Observable<City[]> {
         let base = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?namePrefix=${cityName}&sort=-population`;
 
         return this.httpClient.get<CitiesResponse>(base).pipe(debounceTime(500), map((response) => {

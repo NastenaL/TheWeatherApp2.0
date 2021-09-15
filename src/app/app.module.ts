@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import {AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, GeoDBService} from '../app/index'
+import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, GeoDBService } from '../app/index'
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';

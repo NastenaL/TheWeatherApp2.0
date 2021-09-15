@@ -1,14 +1,14 @@
 import { createAction, props } from "@ngrx/store";
 import { City } from "../../interfaces/city.interface";
 
-const Load  = createAction(
+const Load = createAction(
     '[Search cities] load',
-    props<{searchTerm: string}>()
+    props<{ searchTerm: string }>()
 );
 
-const LoadSuccess  = createAction(
+const LoadSuccess = createAction(
     '[Search cities] load success',
-    props<{cities: City[]}>()
+    props<{ cities: City[] }>()
 );
 
-export const SearchCitiesActions = {Load, LoadSuccess};
+export const SearchCitiesActions = { Load, LoadSuccess };
