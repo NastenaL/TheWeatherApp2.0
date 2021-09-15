@@ -14,7 +14,7 @@ export class CityOverviewEffects{
 constructor(private readonly actions$: Actions, private readonly openWeatherService : OpenWeatherService, private readonly store: Store){}
 
 getWeather$ = createEffect(() => this.actions$.pipe(
-    ofType(CityOverviewActions.LoadCity),
+    ofType(CityOverviewActions.LoadCityId),
     mergeMap((props) =>
     {
       let selectedCity: City | undefined = undefined; 

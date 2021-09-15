@@ -5,17 +5,17 @@ import {CityOverviewActions} from '../actions/city-overview.actions';
 
 export interface State {
     cityOverview: CityOverview | undefined;
-    city: City | undefined;
+    cityId: number;
   }
 
 export const initialState: State = {
     cityOverview: undefined,
-    city: undefined
+    cityId: 0
   };
  
 const cityOverviewReducer = createReducer(
     initialState,
-    on(CityOverviewActions.LoadCity, (state, {cityId})  => ({ ...state, cityId: cityId})),
+    on(CityOverviewActions.LoadCityId, (state, {cityId})  => ({ ...state, cityId: cityId})),
     on(CityOverviewActions.LoadWeather, (state, { cityOverview }) => ({ ...state, cityOverview :cityOverview }))
   );
 

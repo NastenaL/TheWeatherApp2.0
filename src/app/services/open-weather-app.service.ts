@@ -14,12 +14,11 @@ export class OpenWeatherService{
     public getWeatherByCity(lat:number, lon:number): Observable<CityOverview>{
         let base = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${this.key}`;
 
-        console.log(base);
         this.httpClient.get<CityOverviewResponse>(base).subscribe(items =>  {
             console.log(items);
             return items.data;
         });
-
+        
         return this.httpClient.get<CityOverviewResponse>(base).pipe(map((response) => {
             return response.data;
         }));

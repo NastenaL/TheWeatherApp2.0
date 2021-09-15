@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { City } from 'src/app/interfaces/city.interface';
 import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions';
+import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
 import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.selectors';
 
 @Component({
@@ -12,6 +12,7 @@ import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.sele
 })
 export class CityOverviewComponent implements OnInit{
   public readonly cities$ = this.store.select(searchCitiesSelector.selectCities);
+  public readonly weather$ = this.store.select(cityOverviewSelector.selectWeather);
   private selectedItemId: number = 0;
 
   constructor(private readonly store: Store, private route: ActivatedRoute) {}
@@ -21,11 +22,8 @@ export class CityOverviewComponent implements OnInit{
       this.selectedItemId = parseInt(params['id']) 
     });
 
-    let selectedCity: City | undefined = undefined; 
-    this.cities$.subscribe((items: City[]) =>{
-      selectedCity = items.find(i => i.id === this.selectedItemId);
-    });
+    this.store.dispatch(CityOverviewActions.LoadCityId({cityId: this.selectedItemId}));
 
-    this.store.dispatch(CityOverviewActions.LoadCity({cityId: this.selectedItemId}));
+    this.weather$.subscribe(items => console.log(items));
    }
 }
