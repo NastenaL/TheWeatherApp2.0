@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CityOverview } from 'src/app/interfaces/city-overview.interface';
+import { CityOverview } from 'src/app/models/city-overview.model';
 import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions';
 import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
 
@@ -19,9 +19,11 @@ export class CityOverviewComponent implements OnInit {
     this.store.dispatch(CityOverviewActions.Load());
     this.weather$.forEach(item => {
       if (item != undefined) {
-        this.cityWeather = new CityOverview(item.id, item.localTime, item.lat, item.lon, item.timezone_offset,
-          item.description, item.feelsLike, item.humidity, item.uvIndex, item.visibility, item.pressure, item.dewPoint);
+        this.cityWeather = new CityOverview(item.lat, item.lon, item.timezone_offset,//item.description, 
+          item.current.feels_like, item.current.humidity, item.current.uvi, item.current.visibility,
+          item.current.pressure, item.current.dew_point);
       }
     });
+    console.log(this.cityWeather);
   }
 }

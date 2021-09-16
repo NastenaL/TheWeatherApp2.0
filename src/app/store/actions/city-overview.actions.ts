@@ -1,5 +1,6 @@
 import { createAction, props } from "@ngrx/store";
-import { CityOverview } from "../../interfaces/city-overview.interface";
+import { WeatherResponse } from "src/app/interfaces/weather-response/weather-response.interface";
+import { CityOverview } from "../../models/city-overview.model";
 
 const Load = createAction(
     '[CityId] load'
@@ -7,7 +8,7 @@ const Load = createAction(
 
 const LoadSuccess = createAction(
     '[City overview] load success',
-    props<{ cityOverview: CityOverview }>()
+    props<{ cityOverview: WeatherResponse }>()
 );
 
 export const CityOverviewActions = { LoadSuccess, Load };

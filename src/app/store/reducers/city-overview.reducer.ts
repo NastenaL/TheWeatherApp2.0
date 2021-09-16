@@ -1,9 +1,10 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { CityOverview } from '../../interfaces/city-overview.interface';
+import { WeatherResponse } from 'src/app/interfaces/weather-response/weather-response.interface';
+import { CityOverview } from '../../models/city-overview.model';
 import { CityOverviewActions } from '../actions/city-overview.actions';
 
 export interface State {
-  cityOverview: CityOverview | undefined;
+  cityOverview: WeatherResponse | undefined;
   cityId: number;
 }
 
