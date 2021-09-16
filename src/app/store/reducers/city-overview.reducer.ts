@@ -14,8 +14,8 @@ export const initialState: State = {
 
 const cityOverviewReducer = createReducer(
   initialState,
-  on(CityOverviewActions.LoadCityId, (state) => ({ ...state })),
-  on(CityOverviewActions.LoadWeather, (state, { cityOverview }) => ({ ...state, cityOverview: cityOverview }))
+  on(CityOverviewActions.Load, (state) => ({ ...state })),
+  on(CityOverviewActions.LoadSuccess, (state, { cityOverview }) => ({ ...state, cityOverview: cityOverview }))
 );
 
 export function reducer(state: State | undefined, action: Action): State {

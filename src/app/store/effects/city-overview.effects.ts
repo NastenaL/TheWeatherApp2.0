@@ -16,12 +16,12 @@ export class CityOverviewEffects {
     private readonly store: Store) { }
 
   getWeather$ = createEffect(() => this.actions$.pipe(
-    ofType(CityOverviewActions.LoadCityId),
+    ofType(CityOverviewActions.Load),
     withLatestFrom(this.store.select(cityOverviewSelector.selectCurrentCityCoordinates)),
     mergeMap(([, coordinates]) => {
       return this.openWeatherService.getWeatherByCity(coordinates.lat, coordinates.lon)
         .pipe(
-          map(cityOverview => { return CityOverviewActions.LoadWeather({ cityOverview }) })
+          map(cityOverview => { return CityOverviewActions.LoadSuccess({ cityOverview }) })
         );
     }
     )

@@ -1,13 +1,13 @@
 import { createAction, props } from "@ngrx/store";
 import { CityOverview } from "../../interfaces/city-overview.interface";
 
-const LoadCityId = createAction(
+const Load = createAction(
     '[CityId] load'
 );
 
-const LoadWeather = createAction(
-    '[City overview] get success',
+const LoadSuccess = createAction(
+    '[City overview] load success',
     props<{ cityOverview: CityOverview }>()
 );
 
-export const CityOverviewActions = { LoadWeather, LoadCityId };
+export const CityOverviewActions = { LoadSuccess, Load };
