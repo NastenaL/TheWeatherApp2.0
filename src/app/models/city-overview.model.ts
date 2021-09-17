@@ -5,6 +5,7 @@ import { KilometerToMeter } from "../util/kilometer-to-meter.util";
 import { WindDirection } from "../util/wind-direction.util";
 
 export class CityOverview {
+  id: number;
   lat: number;
   lon: number;
   timezone_offset: number;
@@ -19,9 +20,10 @@ export class CityOverview {
   wind_deg: number;
   temp: number;
 
-  constructor(lat: number, lon: number, timezone_offset: number,
+  constructor(id: number, lat: number, lon: number, timezone_offset: number,
     feelsLike: number, humidity: number, uvIndex: number, visibility: number, pressure: number, dewPoint: number,
     weather: Weather, wind_speed: number, wind_deg: number, temp: number) {
+    this.id = id;
     this.lat = lat;
     this.lon = lon;
     this.timezone_offset = timezone_offset;

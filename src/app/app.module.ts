@@ -14,6 +14,7 @@ import { SearchCitiesEffects } from './store/effects/search-cities.effects';
 import { CityOverviewComponent } from './components/city-overview/city-overview.component';
 import { SearchContainerComponent } from './components/search-container/search-container.component';
 import { CityOverviewEffects } from './store/effects/city-overview.effects';
+import { CityDetailsComponent } from './components/city-details/city-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CityOverviewEffects } from './store/effects/city-overview.effects';
     HeaderComponent,
     SearchResultComponent,
     CityOverviewComponent,
-    SearchContainerComponent
+    SearchContainerComponent,
+    CityDetailsComponent
   ],
   imports: [
     BrowserModule,
