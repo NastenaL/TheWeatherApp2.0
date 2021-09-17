@@ -29,7 +29,8 @@ export class CityOverviewComponent implements OnInit {
       if (item != undefined) {
         this.cityWeather = new CityOverview(item.lat, item.lon, item.timezone_offset,//item.description, 
           item.current.feels_like, item.current.humidity, item.current.uvi, item.current.visibility,
-          item.current.pressure, item.current.dew_point, item.current.weather[0]);
+          item.current.pressure, item.current.dew_point, item.current.weather[0], item.current.wind_speed, item.current.wind_deg,
+          item.current.temp);
       }
     });
 
