@@ -5,7 +5,7 @@ export class CityOverview {
   lat: number;
   lon: number;
   timezone_offset: number;
-  _weather: Weather;
+  weather: Weather;
   //description: string[];
   feelsLike: number;
   humidity: number;
@@ -14,9 +14,10 @@ export class CityOverview {
   pressure: number;
   dewPoint: number;
 
+
   constructor(lat: number, lon: number, timezone_offset: number,
     feelsLike: number, humidity: number, uvIndex: number, visibility: number, pressure: number, dewPoint: number,
-    _weather: Weather) {
+    weather: Weather) {
     this.lat = lat;
     this.lon = lon;
     this.timezone_offset = timezone_offset;
@@ -26,7 +27,7 @@ export class CityOverview {
     this.visibility = visibility;
     this.pressure = pressure;
     this.dewPoint = dewPoint;
-    this._weather = _weather;
+    this.weather = weather;
   }
 
   get localTime() {
@@ -41,6 +42,6 @@ export class CityOverview {
   }
 
   get title() {
-    return `${this._weather.main}, ${this._weather.description}`;
+    return `${this.weather.main}, ${this.weather.description}`;
   }
 }
