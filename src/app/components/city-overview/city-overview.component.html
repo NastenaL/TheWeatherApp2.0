@@ -1,7 +1,8 @@
 <div name="top">
     <h2 class="local-time">LOCAL TIME: {{cityWeather?.localTime}}</h2>
-    <p>Coordinates: {{cityWeather?.lat}} ; {{cityWeather?.lon}}</p>
-    <p>{{cityWeather?.timezone}}</p>
+    <p>Coordinates: [ {{cityWeather?.lat}} ; {{cityWeather?.lon}} ] <br/>
+        Time zone: {{cityWeather?.timezone}}
+    </p>
     <button>Add to favorites</button>
 </div>
 
@@ -12,3 +13,15 @@
     </div>
     <h4>Subtitle: {{cityWeather?.subtitle}}</h4>
 </div>
+
+<div name="footer">
+    <p>Feels like: {{cityWeather?.feelsLike}} <br/>
+        Humidity: {{cityWeather?.humidity}} % <br/>
+        UV index: {{cityWeather?.uvIndex}} <br/>
+        Visibility: {{cityWeather?.visibility}} km <br/>
+        Pressure: {{cityWeather?.pressure}} mb <br/>
+        Dew Point: {{cityWeather?.dewPoint}}
+    </p>
+</div>
+
+<button>More</button>
