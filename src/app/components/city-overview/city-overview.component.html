@@ -1,3 +1,12 @@
-<div>
-    {{cityWeather?.humidity}} {{cityWeather?.pressure}}
+<div name="top">
+    <h2 class="local-time">LOCAL TIME: {{cityWeather?.localTime}}</h2>
+    <p>Coordinates: {{cityWeather?.lat}} ; {{cityWeather?.lon}}</p>
+    <p>{{cityWeather?.timezone}}</p>
+    <button>Add to favorites</button>
+</div>
+
+<div name="center">
+<h3>
+    Title: {{cityWeather?.title}}
+</h3>
 </div>

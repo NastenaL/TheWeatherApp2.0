@@ -14,5 +14,5 @@ export interface WeatherInfo {
     visibility: number;
     wind_speed: number;
     wind_deg: number;
-    weather: Weather;
+    weather: Weather[];
 }

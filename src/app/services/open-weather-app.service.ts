@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { WeatherResponse } from "../interfaces/weather-response/weather-response.interface";
-import { CityOverview } from "../models/city-overview.model";
 
 @Injectable({ providedIn: "root" })
 export class OpenWeatherService {
