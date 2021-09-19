@@ -2,3 +2,7 @@ button{
     position: absolute; 
     right: 100px;
 }
+
+.no-city-header{
+    text-align: center;
+}

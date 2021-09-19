@@ -1,8 +1,13 @@
-<ul>
-    <li *ngFor="let item of cities$ | async">
-        <a routerLink="/{{item.id}}">
-            {{item?.name}} {{item?.countryCode}} {{item?.region}}
-        </a>
-        <button>Add to favorites</button>
-    </li>
-</ul>
+<div *ngIf="isEmpty$ | async; else elseBlock">
+    <ul>
+        <li *ngFor="let item of cities$ | async">
+            <a routerLink="/{{item.id}}">
+                {{item?.name}} {{item?.countryCode}} {{item?.region}}
+            </a>
+            <button>Add to favorites</button>
+        </li>
+    </ul>
+</div>
+<ng-template #elseBlock>
+    <h4 class="no-city-header">Any city was not found.</h4>
+</ng-template>
