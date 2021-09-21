@@ -1,6 +1,5 @@
 import { createAction, props } from "@ngrx/store";
 import { WeatherResponse } from "src/app/interfaces/weather-response/weather-response.interface";
-import { CityOverview } from "../../models/city-overview.model";
 
 const Load = createAction(
     '[CityId] load'

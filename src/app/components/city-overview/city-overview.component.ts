@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription, timer } from 'rxjs';
-import { first, map, share } from 'rxjs/operators';
+import { map, share } from 'rxjs/operators';
 import { CityOverview } from 'src/app/models/city-overview.model';
 import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions';
 import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
@@ -30,8 +30,8 @@ export class CityOverviewComponent implements OnInit {
     });
 
     this.store.dispatch(CityOverviewActions.Load());
+
     this.weather$.forEach(item => {
-      console.log(item?.current.weather);
       if (item != undefined) {
         this.cityWeather = new CityOverview(currentCityId, item.lat, item.lon, item.timezone_offset,
           item.current.feels_like, item.current.humidity, item.current.uvi, item.current.visibility,
@@ -39,10 +39,6 @@ export class CityOverviewComponent implements OnInit {
           item.current.wind_deg, item.current.temp);
       }
     });
-
-    this.intervalId = setInterval(() => {
-      this.time = new Date();
-    }, 1000);
 
     this.subscription = timer(0, 1000)
       .pipe(

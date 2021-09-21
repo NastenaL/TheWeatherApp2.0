@@ -1,3 +1,4 @@
+import { Hourly } from "../weather-details/hourly.interface";
 import { WeatherInfo } from "./current-weather.interface";
 
 export interface WeatherResponse {
@@ -6,5 +7,5 @@ export interface WeatherResponse {
     timezone: string;
     timezone_offset: number;
     current: WeatherInfo;
-    hourly: WeatherInfo;
+    hourly: Hourly[];
 }

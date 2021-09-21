@@ -13,8 +13,9 @@ export class SearchCitiesEffects {
     ofType(SearchCitiesActions.Load),
     mergeMap((props) => this.geoDbService.getCityByName(props.searchTerm)
       .pipe(
-        map(cities => { return SearchCitiesActions.LoadSuccess({ cities }) })
+        map(cities => {
+          return SearchCitiesActions.LoadSuccess({ cities })
+        })
       ))
-  )
-  );
+  ));
 }
