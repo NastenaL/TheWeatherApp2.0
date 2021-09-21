@@ -1,0 +1,21 @@
+.row {
+    width: auto;
+    width: 150px;
+    height: 150px;
+    background: #333;
+    margin: 5px;
+    color: white;
+    display:inline-block;
+  }
+
+.container{
+    overflow-x: auto;
+    overflow-y: hidden; 
+    height: 200px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.block {
+
+  }

@@ -55,7 +55,8 @@ export class CityOverview {
   }
 
   get subtitle(): string {
-    return `Low ${this.temp}. Wind ${WindDirection.getDirection(this.wind_deg)} at ${this.wind_speed} kph`;
+    let temperature: string = KelvinToCelsius.convert(this.temp).toFixed(2) + " °C";
+    return `Low ${temperature}. Wind ${WindDirection.getDirection(this.wind_deg)} at ${this.wind_speed} kph`;
   }
 
   get feelsLike(): string {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Hourly } from 'src/app/interfaces/weather-details/hourly.interface';
 import { CityDetail } from 'src/app/models/city-detail.model';
-import { CityDetailsActions } from 'src/app/store/actions/city-detail.actions';
 import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
 
 @Component({
@@ -13,6 +13,7 @@ export class CityDetailsComponent implements OnInit {
 
   public readonly weather$ = this.store.select(cityOverviewSelector.selectWeather);
   public cityWeather: CityDetail | undefined = undefined;
+  public hourlyWeather: Hourly[] | undefined = undefined;
 
   constructor(private readonly store: Store) { }
 
@@ -20,10 +21,10 @@ export class CityDetailsComponent implements OnInit {
     this.weather$.forEach(item => {
       if (item != undefined) {
         this.cityWeather = new CityDetail(item.hourly);
-        console.log(this.cityWeather);
       }
     });
-
+    this.hourlyWeather = this.cityWeather?.hourly;
+    console.log(this.hourlyWeather);
   }
 
 }
