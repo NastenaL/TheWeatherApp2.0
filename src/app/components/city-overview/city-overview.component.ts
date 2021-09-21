@@ -8,7 +8,7 @@ import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions
 import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
 
 @Component({
-  selector: 'wa-city-overview',
+  selector: 'app-city-overview',
   templateUrl: './city-overview.component.html',
   styleUrls: ['./city-overview.component.css']
 })

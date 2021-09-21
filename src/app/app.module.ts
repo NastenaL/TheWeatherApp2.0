@@ -15,6 +15,7 @@ import { CityOverviewComponent } from './components/city-overview/city-overview.
 import { SearchContainerComponent } from './components/search-container/search-container.component';
 import { CityOverviewEffects } from './store/effects/city-overview.effects';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
+import { HourlyWeatherComponent } from './components/hourly-weather/hourly-weather.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CityDetailsComponent } from './components/city-details/city-details.com
     SearchResultComponent,
     CityOverviewComponent,
     SearchContainerComponent,
-    CityDetailsComponent
+    CityDetailsComponent,
+    HourlyWeatherComponent
   ],
   imports: [
     BrowserModule,

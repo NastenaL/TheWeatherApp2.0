@@ -8,7 +8,7 @@ import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions
 import { searchCitiesSelector } from 'src/app/store/selectors/search-cities.selectors';
 
 @Component({
-  selector: 'wa-search-result',
+  selector: 'app-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
