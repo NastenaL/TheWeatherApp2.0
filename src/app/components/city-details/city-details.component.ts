@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Hourly } from 'src/app/interfaces/weather-details/hourly.interface';
-import { CityDetail } from 'src/app/models/city-detail.model';
-import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
+import { CityDetail, cityOverviewSelector, Hourly } from './index'
 
 @Component({
   selector: 'app-city-details',

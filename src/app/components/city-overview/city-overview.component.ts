@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Subscription, timer } from 'rxjs';
-import { map, share } from 'rxjs/operators';
-import { CityOverview } from 'src/app/models/city-overview.model';
-import { CityOverviewActions } from 'src/app/store/actions/city-overview.actions';
-import { cityOverviewSelector } from 'src/app/store/selectors/city-overview.selector';
+import { CityOverview, CityOverviewActions, cityOverviewSelector, LocalTime } from './index'
 
 @Component({
   selector: 'app-city-overview',
@@ -17,11 +13,6 @@ export class CityOverviewComponent implements OnInit {
   public cityWeather: CityOverview | undefined = undefined;
 
   constructor(private readonly store: Store, private route: ActivatedRoute) { }
-
-  time = new Date();
-  rxTime = new Date();
-  intervalId: NodeJS.Timeout | undefined;
-  subscription: Subscription | undefined = undefined;
 
   ngOnInit() {
     let currentCityId = 0;
@@ -39,21 +30,10 @@ export class CityOverviewComponent implements OnInit {
           item.current.wind_deg, item.current.temp);
       }
     });
-
-    this.subscription = timer(0, 1000)
-      .pipe(
-        map(() => new Date()),
-        share()
-      )
-      .subscribe(time => {
-        this.rxTime = time;
-      });
+    LocalTime.loadClock();
   }
 
   ngOnDestroy() {
-    clearInterval(this.intervalId!);
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    LocalTime.deleteClock();
   }
 }
