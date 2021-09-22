@@ -24,7 +24,5 @@ export class CityDetailsComponent implements OnInit {
       }
     });
     this.hourlyWeather = this.cityWeather?.hourly;
-    console.log(this.hourlyWeather);
   }
-
 }
