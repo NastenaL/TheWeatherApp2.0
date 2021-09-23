@@ -1,7 +1,6 @@
 import { WeatherResponse } from "../interfaces/weather-response/weather-response.interface";
 import { Weather } from "../interfaces/weather-response/weather.interface";
 import { LocalTime } from "../util/clock.util";
-import { KilometerToMeter } from "../util/kilometer-to-meter.util";
 import { WindDirection } from "../util/wind-direction.util";
 
 export class CityOverview {
@@ -13,7 +12,7 @@ export class CityOverview {
   feelsLike: number;
   humidity: number;
   uvIndex: number;
-  _visibility: number;
+  visibility: number;
   pressure: number;
   dewPoint: number;
   wind_speed: number;
@@ -28,7 +27,7 @@ export class CityOverview {
     this.feelsLike = weatherResponce.current.feels_like;
     this.humidity = weatherResponce.current.humidity;
     this.uvIndex = weatherResponce.current.uvi;
-    this._visibility = weatherResponce.current.visibility;
+    this.visibility = weatherResponce.current.visibility;
     this.pressure = weatherResponce.current.pressure;
     this.dewPoint = weatherResponce.current.dew_point;
     this.weather = weatherResponce.current.weather[0];
@@ -55,9 +54,5 @@ export class CityOverview {
   get subtitle(): string {
     let temperature: string = (this.temp - 273.15).toFixed(2) + " °C";
     return `Low ${temperature}. Wind ${WindDirection.getDirection(this.wind_deg)} at ${this.wind_speed} kph`;
-  }
-
-  get visibility(): number {
-    return KilometerToMeter.convert(this._visibility);
   }
 }

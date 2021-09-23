@@ -19,7 +19,7 @@
         <p>Feels like: {{weather.cityWeather!.feelsLike | convertToCelsius}} <br/>
             Humidity: {{weather.cityWeather!.humidity}} % <br/>
             UV index: {{weather.cityWeather!.uvIndex}} <br/>
-            Visibility: {{weather.cityWeather!.visibility}} km <br/>
+            Visibility: {{weather.cityWeather!.visibility | convertToMeter}}<br/>
             Pressure: {{weather.cityWeather!.pressure}} mb <br/>
             Dew Point: {{weather.cityWeather!.dewPoint | convertToCelsius}}
         </p>
