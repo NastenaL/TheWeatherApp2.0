@@ -7,7 +7,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, actionReducerMap, SearchCitiesEffects, CityOverviewComponent, SearchContainerComponent, CityOverviewEffects, CityDetailsComponent, HourlyTileComponent, TemperaturePipe, MeterToKilometerPipe } from '../app/index'
+import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, actionReducerMap, SearchCitiesEffects, CityOverviewComponent, SearchContainerComponent, CityOverviewEffects, CityDetailsComponent, HourlyTileComponent, KelvinToCelsiusPipe, MeterToKilometerPipe } from '../app/index'
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderCom
     SearchContainerComponent,
     CityDetailsComponent,
     HourlyTileComponent,
-    TemperaturePipe,
+    KelvinToCelsiusPipe,
     MeterToKilometerPipe
   ],
   imports: [

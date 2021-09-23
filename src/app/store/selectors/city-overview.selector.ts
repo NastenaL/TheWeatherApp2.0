@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { Hourly } from 'src/app/components/city-details';
 import { CityOverview } from 'src/app/models/city-overview.model';
 import * as fromCityOverview from '../reducers/city-overview.reducer';
 import { selectRouteParam } from './router.selectors';
@@ -39,4 +40,15 @@ const selectCityOverview = createSelector(
   }
 );
 
-export const cityOverviewSelector = { selectCity, selectWeather, selectCurrentCityCoordinates, selectCityOverview };
+const selectCityDetailHourly = createSelector(
+  selectWeather,
+  selectCity,
+  (cityOverview, cityId) => {
+    if (cityOverview) {
+      return cityOverview.hourly;
+    }
+    return {} as Hourly[];
+  }
+);
+
+export const cityOverviewSelector = { selectCity, selectWeather, selectCurrentCityCoordinates, selectCityOverview, selectCityDetailHourly };

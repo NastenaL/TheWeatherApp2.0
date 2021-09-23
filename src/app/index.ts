@@ -12,5 +12,5 @@ export { SearchContainerComponent } from './components/search-container/search-c
 export { CityOverviewEffects } from './store/effects/city-overview.effects';
 export { CityDetailsComponent } from './components/city-details/city-details.component';
 export { HourlyTileComponent } from './components/hourly-tile/hourly-tile.component';
-export { TemperaturePipe } from './pipes/kelvin-to-celsius.pipe';
+export { KelvinToCelsiusPipe } from './pipes/kelvin-to-celsius.pipe';
 export { MeterToKilometerPipe } from './pipes/meter-to-kilometer.pipe';

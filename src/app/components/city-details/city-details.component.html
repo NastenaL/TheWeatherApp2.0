@@ -2,7 +2,7 @@
     <div class="hourly">
         <h2>HOURLY</h2>
         <div class="container">
-            <div *ngFor="let hourly of hourlyWeather"
+            <div *ngFor="let hourly of hourlyWeather$ | async"
                 class="row">
                 <app-hourly-tile [hourly] = "hourly"></app-hourly-tile>
             </div>
