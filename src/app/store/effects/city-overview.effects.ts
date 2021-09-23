@@ -21,7 +21,7 @@ export class CityOverviewEffects {
     mergeMap(([, coordinates]) => {
       return this.openWeatherService.getWeatherByCity(coordinates.lat, coordinates.lon)
         .pipe(
-          map(cityOverview => { return CityOverviewActions.LoadSuccess({ cityOverview }) })
+          map(weatherResponse => { return CityOverviewActions.LoadSuccess({ weatherResponse }) })
         );
     }
     )

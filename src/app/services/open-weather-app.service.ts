@@ -17,5 +17,13 @@ export class OpenWeatherService {
             return response;
         }));
     }
+
+    public getWeatherById(id: number): Observable<WeatherResponse> {
+        let base = `http://geodb-free-service.wirefreethought.com/v1/geo/cities/${id}`;
+
+        return this.httpClient.get<WeatherResponse>(base).pipe(map((response) => {
+            return response;
+        }));
+    }
 }
 

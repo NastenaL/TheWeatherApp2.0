@@ -7,7 +7,7 @@ const Load = createAction(
 
 const LoadSuccess = createAction(
     '[City overview] load success',
-    props<{ cityOverview: WeatherResponse }>()
+    props<{ weatherResponse: WeatherResponse }>()
 );
 
 export const CityOverviewActions = { LoadSuccess, Load };

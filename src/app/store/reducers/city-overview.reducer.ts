@@ -1,22 +1,21 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { WeatherResponse } from 'src/app/interfaces/weather-response/weather-response.interface';
-import { CityOverview } from '../../models/city-overview.model';
 import { CityOverviewActions } from '../actions/city-overview.actions';
 
 export interface State {
-  cityOverview: WeatherResponse | undefined;
+  weatherResponse: WeatherResponse | undefined;
   cityId: number;
 }
 
 export const initialState: State = {
-  cityOverview: undefined,
+  weatherResponse: undefined,
   cityId: 0
 };
 
 const cityOverviewReducer = createReducer(
   initialState,
   on(CityOverviewActions.Load, (state) => ({ ...state })),
-  on(CityOverviewActions.LoadSuccess, (state, { cityOverview }) => ({ ...state, cityOverview: cityOverview }))
+  on(CityOverviewActions.LoadSuccess, (state, { weatherResponse }) => ({ ...state, weatherResponse: weatherResponse }))
 );
 
 export function reducer(state: State | undefined, action: Action): State {

@@ -24,7 +24,7 @@ const selectCity = createSelector(
 
 const selectWeather = createSelector(
   selectFeature,
-  (state) => state.cityOverview
+  (state) => state.weatherResponse
 );
 
 const selectCityOverview = createSelector(
