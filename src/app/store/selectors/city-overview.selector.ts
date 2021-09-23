@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { CityOverview } from 'src/app/models/city-overview.model';
 import * as fromCityOverview from '../reducers/city-overview.reducer';
 import { selectRouteParam } from './router.selectors';
 import { searchCitiesSelector } from './search-cities.selectors'
@@ -24,4 +25,18 @@ const selectWeather = createSelector(
   selectFeature,
   (state) => state.cityOverview
 );
-export const cityOverviewSelector = { selectCity, selectWeather, selectCurrentCityCoordinates };
+
+const selectCityOverview = createSelector(
+  selectWeather,
+  selectCity,
+  (cityOverview, cityId) => {
+    if (cityOverview) {
+      return new CityOverview(
+        cityId,
+        cityOverview);
+    }
+    return {} as CityOverview;
+  }
+);
+
+export const cityOverviewSelector = { selectCity, selectWeather, selectCurrentCityCoordinates, selectCityOverview };

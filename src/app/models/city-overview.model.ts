@@ -1,3 +1,4 @@
+import { WeatherResponse } from "../interfaces/weather-response/weather-response.interface";
 import { Weather } from "../interfaces/weather-response/weather.interface";
 import { LocalTime } from "../util/clock.util";
 import { KelvinToCelsius } from "../util/kelvin-to-celsius.util";
@@ -20,23 +21,21 @@ export class CityOverview {
   wind_deg: number;
   temp: number;
 
-  constructor(id: number, lat: number, lon: number, timezone_offset: number,
-    feelsLike: number, humidity: number, uvIndex: number, visibility: number, pressure: number, dewPoint: number,
-    weather: Weather, wind_speed: number, wind_deg: number, temp: number) {
+  constructor(id: number, weatherResponce: WeatherResponse) {
     this.id = id;
-    this.lat = lat;
-    this.lon = lon;
-    this.timezone_offset = timezone_offset;
-    this._feelsLike = feelsLike;
-    this.humidity = humidity;
-    this.uvIndex = uvIndex;
-    this._visibility = visibility;
-    this.pressure = pressure;
-    this._dewPoint = dewPoint;
-    this.weather = weather;
-    this.wind_speed = wind_speed;
-    this.wind_deg = wind_deg;
-    this.temp = temp;
+    this.lat = weatherResponce.lat;
+    this.lon = weatherResponce.lon;
+    this.timezone_offset = weatherResponce.timezone_offset;
+    this._feelsLike = weatherResponce.current.feels_like;
+    this.humidity = weatherResponce.current.humidity;
+    this.uvIndex = weatherResponce.current.uvi;
+    this._visibility = weatherResponce.current.visibility;
+    this.pressure = weatherResponce.current.pressure;
+    this._dewPoint = weatherResponce.current.dew_point;
+    this.weather = weatherResponce.current.weather[0];
+    this.wind_speed = weatherResponce.current.wind_speed;
+    this.wind_deg = weatherResponce.current.wind_deg;
+    this.temp = weatherResponce.current.temp;
   }
 
   get localTime(): String {

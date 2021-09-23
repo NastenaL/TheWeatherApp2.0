@@ -9,8 +9,7 @@ import { CityOverview, CityOverviewActions, cityOverviewSelector, LocalTime } fr
   styleUrls: ['./city-overview.component.css']
 })
 export class CityOverviewComponent implements OnInit {
-  public readonly weather$ = this.store.select(cityOverviewSelector.selectWeather);
-  public cityWeather: CityOverview | undefined = undefined;
+  public cityWeather$ = this.store.select(cityOverviewSelector.selectCityOverview);
 
   constructor(private readonly store: Store, private route: ActivatedRoute) { }
 
@@ -21,15 +20,6 @@ export class CityOverviewComponent implements OnInit {
     });
 
     this.store.dispatch(CityOverviewActions.Load());
-
-    this.weather$.forEach(item => {
-      if (item != undefined) {
-        this.cityWeather = new CityOverview(currentCityId, item.lat, item.lon, item.timezone_offset,
-          item.current.feels_like, item.current.humidity, item.current.uvi, item.current.visibility,
-          item.current.pressure, item.current.dew_point, item.current.weather[0], item.current.wind_speed,
-          item.current.wind_deg, item.current.temp);
-      }
-    });
     LocalTime.loadClock();
   }
 

@@ -1,27 +1,29 @@
-<div name="top">
-    <h2 class="local-time">LOCAL TIME: {{cityWeather?.localTime}}</h2>
-    <p>Coordinates: [ {{cityWeather?.lat}} ; {{cityWeather?.lon}} ] <br/>
-        Time zone: {{cityWeather?.timezone}}
-    </p>
-    <button>Add to favorites</button>
-</div>
-
-<div name="center">
-    <div class="title">    
-        <h3 style="display: inline-block;">Title: {{cityWeather?.title}}</h3>
-        <img style="display: inline-block; " src="http://openweathermap.org/img/wn/{{cityWeather?.weather?.icon}}.png">
+<div *ngIf="{cityWeather: cityWeather$ | async} as weather">
+    <div name="top">
+        <h2 class="local-time">LOCAL TIME: {{weather.cityWeather!.localTime}}</h2>
+        <p>Coordinates: [ {{weather.cityWeather!.lat}} ; {{weather.cityWeather!.lon}} ] <br/>
+            Time zone: {{(weather.cityWeather!)?.timezone}}
+        </p>
+        <button>Add to favorites</button>
     </div>
-    <h4>Subtitle: {{cityWeather?.subtitle}}</h4>
+    
+    <div name="center">
+        <div class="title">    
+            <h3 style="display: inline-block;">Title: {{weather.cityWeather!.title}}</h3>
+            <img style="display: inline-block; " src="http://openweathermap.org/img/wn/{{weather.cityWeather!.weather?.icon}}.png">
+        </div>
+        <h4>Subtitle: {{weather.cityWeather!.subtitle}}</h4>
+    </div>
+    
+    <div name="footer">
+        <p>Feels like: {{weather.cityWeather!.feelsLike}} <br/>
+            Humidity: {{weather.cityWeather!.humidity}} % <br/>
+            UV index: {{weather.cityWeather!.uvIndex}} <br/>
+            Visibility: {{weather.cityWeather!.visibility}} km <br/>
+            Pressure: {{weather.cityWeather!.pressure}} mb <br/>
+            Dew Point: {{weather.cityWeather!.dewPoint}}
+        </p>
+    </div>
+    
+    <button routerLink="/{{weather.cityWeather!.id}}/details">More</button>
 </div>
-
-<div name="footer">
-    <p>Feels like: {{cityWeather?.feelsLike}} <br/>
-        Humidity: {{cityWeather?.humidity}} % <br/>
-        UV index: {{cityWeather?.uvIndex}} <br/>
-        Visibility: {{cityWeather?.visibility}} km <br/>
-        Pressure: {{cityWeather?.pressure}} mb <br/>
-        Dew Point: {{cityWeather?.dewPoint}}
-    </p>
-</div>
-
-<button routerLink="/{{cityWeather?.id}}/details">More</button>
