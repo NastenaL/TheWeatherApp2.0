@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { CityOverview, CityOverviewActions, cityOverviewSelector, LocalTime } from './index'
+import { CityOverviewActions, cityOverviewSelector, LocalTime } from './index'
 
 @Component({
   selector: 'app-city-overview',

@@ -16,12 +16,12 @@
     </div>
     
     <div name="footer">
-        <p>Feels like: {{weather.cityWeather!.feelsLike}} <br/>
+        <p>Feels like: {{weather.cityWeather!.feelsLike | convertToCelsius}} <br/>
             Humidity: {{weather.cityWeather!.humidity}} % <br/>
             UV index: {{weather.cityWeather!.uvIndex}} <br/>
             Visibility: {{weather.cityWeather!.visibility}} km <br/>
             Pressure: {{weather.cityWeather!.pressure}} mb <br/>
-            Dew Point: {{weather.cityWeather!.dewPoint}}
+            Dew Point: {{weather.cityWeather!.dewPoint | convertToCelsius}}
         </p>
     </div>
     

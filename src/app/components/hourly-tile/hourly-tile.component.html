@@ -1,4 +1,4 @@
 <div class="block">
-    {{hourly?.temp}}
+    {{hourly?.temp! | convertToCelsius}}
     {{hourly?.humidity}} %
 </div>

@@ -1,21 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, GeoDBService } from '../app/index'
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { actionReducerMap } from './store/reducers/main.reducer';
-import { SearchCitiesEffects } from './store/effects/search-cities.effects';
-import { CityOverviewComponent } from './components/city-overview/city-overview.component';
-import { SearchContainerComponent } from './components/search-container/search-container.component';
-import { CityOverviewEffects } from './store/effects/city-overview.effects';
-import { CityDetailsComponent } from './components/city-details/city-details.component';
-import { HourlyTileComponent } from './components/hourly-tile/hourly-tile.component';
+import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, actionReducerMap, SearchCitiesEffects, CityOverviewComponent, SearchContainerComponent, CityOverviewEffects, CityDetailsComponent, HourlyTileComponent, TemperaturePipe } from '../app/index'
 
 @NgModule({
   declarations: [
@@ -26,7 +18,8 @@ import { HourlyTileComponent } from './components/hourly-tile/hourly-tile.compon
     CityOverviewComponent,
     SearchContainerComponent,
     CityDetailsComponent,
-    HourlyTileComponent
+    HourlyTileComponent,
+    TemperaturePipe
   ],
   imports: [
     BrowserModule,
