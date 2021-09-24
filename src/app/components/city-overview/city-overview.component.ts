@@ -14,11 +14,6 @@ export class CityOverviewComponent implements OnInit {
   constructor(private readonly store: Store, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let currentCityId = 0;
-    this.route.params.subscribe(params => {
-      currentCityId = parseInt(params['id'])
-    });
-
     this.store.dispatch(CityOverviewActions.Load());
     LocalTime.loadClock();
   }
