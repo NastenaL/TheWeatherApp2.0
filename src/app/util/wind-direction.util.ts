@@ -1,5 +1,6 @@
 export class WindDirection {
     static getDirection(degrees: number): string {
+        // TODO: Please, move magic numbers into constants
         degrees *= 10;
         let cardinals = [
             "north",

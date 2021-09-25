@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import { map, mergeMap, withLatestFrom } from "rxjs/operators";
 import { CityDetail } from "src/app/models/city-detail.model";
 import { OpenWeatherService } from "src/app/services/open-weather-app.service";
+// TODO:Please, use barrel file instead, for actions and selectors as well
 import { CityDetailsActions } from "../actions/city-detail.actions";
 import { CityOverviewActions } from "../actions/city-overview.actions";
 import { cityOverviewSelector } from "../selectors/city-overview.selector";
@@ -17,7 +18,12 @@ export class CityDetailEffects {
         private readonly openWeatherService: OpenWeatherService,
         private readonly store: Store) { }
 
+
+    // TODO: Same comments as for SearchCitiesEffects
     getWeather$ = createEffect(() => this.actions$.pipe(
+        // TODO: Please, ensure that logic is intended
+        // We should explicitly define relationship/difference between features
+        // At current case I suppose to see CityDetailsActions.load instead of CityOverviewActions 
         ofType(CityOverviewActions.Load),
         withLatestFrom(this.store.select(cityOverviewSelector.selectCurrentCityCoordinates)),
         mergeMap(([, coordinates]) => {

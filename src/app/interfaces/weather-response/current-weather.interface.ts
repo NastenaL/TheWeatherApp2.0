@@ -1,5 +1,5 @@
 import { Weather } from "./weather.interface";
-
+// TODO: Same as for Coordinate interface
 export interface WeatherInfo {
     dt: number;
     sunrise: number;

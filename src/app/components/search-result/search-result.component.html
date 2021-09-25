@@ -1,9 +1,11 @@
 <div *ngIf="isEmpty$ | async; else elseBlock">
     <ul>
         <li *ngFor="let item of cities$ | async">
+            <!-- TODO: Check if we need to use ? operator here -->
             <a routerLink="/{{item.id}}">
                 {{item?.name}} {{item?.countryCode}} {{item?.region}}
             </a>
+            <!-- TODO: Please, check usage -->
             <button>Add to favorites</button>
         </li>
     </ul>

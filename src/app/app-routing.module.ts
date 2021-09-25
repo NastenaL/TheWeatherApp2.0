@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// TODO: Use barrel file instead of importing every component
 import { CityDetailsComponent } from './components/city-details/city-details.component';
 import { CityOverviewComponent } from './components/city-overview/city-overview.component';
 import { SearchContainerComponent } from './components/search-container/search-container.component';

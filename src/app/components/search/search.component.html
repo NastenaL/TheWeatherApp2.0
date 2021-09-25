@@ -1,6 +1,8 @@
 <div class="search">
     <h3>Enter city name:</h3>
 
+    <!-- TODO: Please ensure that minlength and maxlength validations works correctly -->
+    <!-- TODO: Please, use `on` prefix for all event handlers -->
     <input autoFocus [formControl]="searchTermControl" class="searchInput" minlength="1" maxlength="20"
         (keyup.enter)="getCityByName()" />
 </div>

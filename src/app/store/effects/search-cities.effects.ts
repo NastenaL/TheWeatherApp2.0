@@ -9,10 +9,14 @@ export class SearchCitiesEffects {
 
   constructor(private readonly actions$: Actions, private readonly geoDbService: GeoDBService) { }
 
+  // Please, use access modifiers
+  // Please, check if we we can use readonly here
   load$ = createEffect(() => this.actions$.pipe(
     ofType(SearchCitiesActions.Load),
+    // Please, check if we can use switchMap here
     mergeMap((props) => this.geoDbService.getCityByName(props.searchTerm)
       .pipe(
+        // TODO: Please, add error handling
         map(cities => {
           return SearchCitiesActions.LoadSuccess({ cities })
         })

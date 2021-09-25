@@ -4,9 +4,11 @@ import { LocalTime } from "../util/clock.util";
 import { WindDirection } from "../util/wind-direction.util";
 
 export class CityOverview {
+  // TODO: Please, add access modifiers, check if we can use readonly here and check about required / optional option
   id: number;
   lat: number;
   lon: number;
+  // TODO: Please, use lowerCamelCase instead
   timezone_offset: number;
   weather: Weather;
   feelsLike: number;
@@ -19,6 +21,7 @@ export class CityOverview {
   wind_deg: number;
   temp: number;
 
+  // TODO: Fix the typo
   constructor(id: number, weatherResponce: WeatherResponse) {
     this.id = id;
     this.lat = weatherResponce.lat;
@@ -36,10 +39,12 @@ export class CityOverview {
     this.temp = weatherResponce.current.temp;
   }
 
+  // TODO: Please, use string response type instead
   get localTime(): String {
     return LocalTime.getTime(this.timezone_offset);
   }
 
+  // TODO: Move into pipe
   get timezone(): string {
     let gtm: number = this.timezone_offset / 3600;
     let text: string = "";
@@ -51,6 +56,7 @@ export class CityOverview {
     return `${this.weather.main}, ${this.weather.description}`;
   }
 
+  // TODO: Move into pipe
   get subtitle(): string {
     let temperature: string = (this.temp - 273.15).toFixed(2) + " °C";
     return `Low ${temperature}. Wind ${WindDirection.getDirection(this.wind_deg)} at ${this.wind_speed} kph`;
