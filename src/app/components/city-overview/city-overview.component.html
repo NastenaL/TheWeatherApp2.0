@@ -1,7 +1,11 @@
 <div *ngIf="{cityWeather: cityWeather$ | async} as weather">
+    <!-- TODO: Please, move this template into separate component -->
     <div name="top">
+        <!-- TODO: Please, ensure that we can show UI without weather.cityWeather and we keep need it  -->
+        <!-- Could we add a simple check of existence and not render the template without this value -->
         <h2 class="local-time">LOCAL TIME: {{weather.cityWeather!.localTime}}</h2>
         <p>Coordinates: [ {{weather.cityWeather!.lat}} ; {{weather.cityWeather!.lon}} ] <br/>
+            <!-- TODO: Please, check usage if !)? here -->
             Time zone: {{(weather.cityWeather!)?.timezone}}
         </p>
         <button>Add to favorites</button>
@@ -16,6 +20,7 @@
     </div>
     
     <div name="footer">
+        <!-- TODO: Please, check if we can move this template into reusable component -->
         <p>Feels like: {{weather.cityWeather!.feelsLike | convertToCelsius}} <br/>
             Humidity: {{weather.cityWeather!.humidity}} % <br/>
             UV index: {{weather.cityWeather!.uvIndex}} <br/>

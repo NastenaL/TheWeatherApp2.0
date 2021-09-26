@@ -10,6 +10,7 @@ export const initialState: State = {
     cityDetail: undefined
 };
 
+// TODO: Please, check naming according to feature name
 const cityOverviewReducer = createReducer(
     initialState,
     on(CityDetailsActions.LoadSuccess, (state, { cityDetail }) => ({ ...state, cityDetail: cityDetail }))

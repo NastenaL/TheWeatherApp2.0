@@ -7,6 +7,7 @@ import { SearchCitiesActions } from 'src/app/store/actions/search-cities.actions
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
+    // TODO: Please, provider changeDetectionStrategy
 })
 export class SearchComponent {
 

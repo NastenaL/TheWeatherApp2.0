@@ -7,6 +7,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+// TODO: Don't use /index at import, it will be used by default
 import { AppComponent, environment, AppRoutingModule, SearchComponent, HeaderComponent, SearchResultComponent, actionReducerMap, SearchCitiesEffects, CityOverviewComponent, SearchContainerComponent, CityOverviewEffects, CityDetailsComponent, HourlyTileComponent, KelvinToCelsiusPipe, MeterToKilometerPipe } from '../app/index'
 
 @NgModule({

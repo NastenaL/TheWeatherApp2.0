@@ -5,6 +5,7 @@ const selectFeature = createFeatureSelector<fromSearchCities.State>("searchCitie
 
 const selectCities = createSelector(
   selectFeature,
+  // TODO: Please, move magic numbers into constants
   (state) => state.cities.slice(0, 15)
 );
 export const searchCitiesSelector = { selectCities };
