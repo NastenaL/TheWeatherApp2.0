@@ -8,7 +8,7 @@ import { Hourly } from 'src/app/interfaces/weather-details/hourly.interface';
 })
 export class HourlyTileComponent implements OnInit {
 
-  @Input() hourly: Hourly | undefined;
+  @Input() hourlyWeather: Hourly | undefined;
   constructor() { }
 
   ngOnInit(): void {
