@@ -1,4 +1,4 @@
-<div *ngIf="isEmpty$ | async; else elseBlock">
+<div *ngIf="(cities$ | async)?.length != 0; else elseBlock">
     <ul>
         <li *ngFor="let item of cities$ | async">
             <a routerLink="/{{item.id}}">

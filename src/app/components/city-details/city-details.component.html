@@ -1,4 +1,4 @@
-<div *ngIf="isEmpty$ | async; else elseBlock">
+<div *ngIf="(hourlyWeathers$ | async)?.length != 0; else elseBlock">
     <div class="hourly">
         <h2>HOURLY</h2>
         <div class="container">
