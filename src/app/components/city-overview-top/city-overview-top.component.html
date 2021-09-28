@@ -1,7 +1,6 @@
-<div name="top">
-    <h2 class="local-time">LOCAL TIME: {{cityOverview!.localTime}}</h2>
-    <p>Coordinates: [ {{cityOverview!.lat}} ; {{cityOverview!.lon}} ] <br/>
-        Time zone: {{cityOverview!.timezone}}
+<div name="top"  *ngIf="(cityOverview!) != undefined">
+    <h2 class="local-time">LOCAL TIME: {{cityOverview.localTime}}</h2>
+    <p>Coordinates: [ {{cityOverview.lat}} ; {{cityOverview.lon}} ] <br/>
+        Time zone: {{cityOverview.timezone}}
     </p>
-    <button>Add to favorites</button>
 </div>

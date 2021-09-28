@@ -1,7 +1,12 @@
 <div *ngIf="{cityWeather: cityWeather$ | async} as weather">
-    <app-city-overview-top [cityOverview]="weather.cityWeather!"></app-city-overview-top>
-    <app-city-overview-center [cityOverview]="weather.cityWeather!"></app-city-overview-center>
-    <app-city-overview-footer [cityOverview]="weather.cityWeather!"></app-city-overview-footer>
-    
-    <button routerLink="/{{weather.cityWeather?.id}}/details">More</button>
+    <div *ngIf="(weather.cityWeather!) != undefined; else elseBlock">
+        <app-city-overview-top [cityOverview]="weather.cityWeather"></app-city-overview-top>
+        <app-city-overview-center [cityOverview]="weather.cityWeather"></app-city-overview-center>
+        <app-city-overview-footer [cityOverview]="weather.cityWeather"></app-city-overview-footer>
+
+        <button routerLink="/{{weather.cityWeather.id}}/details">More</button>
+    </div>
+    <ng-template #elseBlock>
+        <h4 class="no-city-header">City not found</h4>
+    </ng-template>
 </div>

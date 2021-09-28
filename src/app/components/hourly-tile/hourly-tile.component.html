@@ -1,4 +1,4 @@
-<div class="block">
-    {{hourlyWeather?.temp! | convertToCelsius}}
-    {{hourlyWeather?.humidity}} %
+<div class="block"  *ngIf="(hourlyWeather!) != undefined">
+    {{hourlyWeather.temp | convertToCelsius}}
+    {{hourlyWeather.humidity}} %
 </div>

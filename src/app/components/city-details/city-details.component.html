@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isEmpty$ | async; else elseBlock">
     <div class="hourly">
         <h2>HOURLY</h2>
         <div class="container">
@@ -9,3 +9,6 @@
         </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <h4 class="no-city-header">City not found</h4>
+</ng-template>

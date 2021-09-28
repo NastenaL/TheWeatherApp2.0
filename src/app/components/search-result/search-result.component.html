@@ -2,9 +2,8 @@
     <ul>
         <li *ngFor="let item of cities$ | async">
             <a routerLink="/{{item.id}}">
-                {{item?.name}} {{item?.countryCode}} {{item?.region}}
+                {{item.name}} {{item.countryCode}} {{item.region}}
             </a>
-            <button>Add to favorites</button>
         </li>
     </ul>
 </div>
