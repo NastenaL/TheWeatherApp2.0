@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { cityOverviewSelector } from './index'
+import { cityOverviewSelector } from 'src/app/store';
 
 @Component({
   selector: 'app-city-details',

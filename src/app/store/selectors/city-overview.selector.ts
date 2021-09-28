@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Hourly } from 'src/app/components/city-details';
+import { Hourly } from 'src/app/interfaces/index';
 import { CityOverview } from 'src/app/models/city-overview.model';
 import * as fromCityOverview from '../reducers/city-overview.reducer';
 import { selectRouteParam } from './router.selectors';
