@@ -1,0 +1,9 @@
+<div name="footer">
+    <p>Feels like: {{cityOverview!.feelsLike | convertToCelsius}} <br/>
+        Humidity: {{cityOverview!.humidity}} % <br/>
+        UV index: {{cityOverview!.uvIndex}} <br/>
+        Visibility: {{cityOverview!.visibility | convertToMeter}}<br/>
+        Pressure: {{cityOverview!.pressure}} mb <br/>
+        Dew Point: {{cityOverview!.dewPoint | convertToCelsius}}
+    </p>
+</div>

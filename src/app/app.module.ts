@@ -21,6 +21,9 @@ import { KelvinToCelsiusPipe, MeterToKilometerPipe } from './pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { actionReducerMap, CityOverviewEffects, SearchCitiesEffects } from './store';
 import { environment } from 'src/environments/environment';
+import { CityOverviewTopComponent } from './components/city-overview-top/city-overview-top.component';
+import { CityOverviewCenterComponent } from './components/city-overview-center/city-overview-center.component';
+import { CityOverviewFooterComponent } from './components/city-overview-footer/city-overview-footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { environment } from 'src/environments/environment';
     CityDetailsComponent,
     HourlyTileComponent,
     KelvinToCelsiusPipe,
-    MeterToKilometerPipe
+    MeterToKilometerPipe,
+    CityOverviewTopComponent,
+    CityOverviewCenterComponent,
+    CityOverviewFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Hourly } from 'src/app/interfaces/weather-details/hourly.interface';
 
 @Component({
@@ -6,12 +6,6 @@ import { Hourly } from 'src/app/interfaces/weather-details/hourly.interface';
   templateUrl: './hourly-tile.component.html',
   styleUrls: ['./hourly-tile.component.css']
 })
-export class HourlyTileComponent implements OnInit {
-
+export class HourlyTileComponent {
   @Input() hourlyWeather: Hourly | undefined;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

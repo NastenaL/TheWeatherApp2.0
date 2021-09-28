@@ -1,5 +1,5 @@
 export * from './city-details/city-details.component';
-export * from './city-overview/city-overview.component';
+export * from './city-overview-container/city-overview-container.component';
 export * from './header/header.component';
 export * from './hourly-tile/hourly-tile.component';
 export * from './search-container/search-container.component';

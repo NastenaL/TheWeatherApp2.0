@@ -1,0 +1,7 @@
+<div *ngIf="{cityWeather: cityWeather$ | async} as weather">
+    <app-city-overview-top [cityOverview]="weather.cityWeather!"></app-city-overview-top>
+    <app-city-overview-center [cityOverview]="weather.cityWeather!"></app-city-overview-center>
+    <app-city-overview-footer [cityOverview]="weather.cityWeather!"></app-city-overview-footer>
+    
+    <button routerLink="/{{weather.cityWeather?.id}}/details">More</button>
+</div>

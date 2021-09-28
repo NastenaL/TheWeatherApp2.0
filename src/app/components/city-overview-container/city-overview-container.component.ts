@@ -6,8 +6,8 @@ import { LocalTime } from 'src/app/util/clock.util';
 
 @Component({
   selector: 'app-city-overview',
-  templateUrl: './city-overview.component.html',
-  styleUrls: ['./city-overview.component.css']
+  templateUrl: './city-overview-container.component.html',
+  styleUrls: ['./city-overview-container.component.css']
 })
 export class CityOverviewComponent implements OnInit {
   public cityWeather$ = this.store.select(cityOverviewSelector.selectCityOverview);
