@@ -9,7 +9,7 @@ import { cityOverviewSelector } from 'src/app/store';
   styleUrls: ['./city-details.component.css']
 })
 export class CityDetailsComponent {
-  public readonly hourlyWeathers$ = this.store.select(cityOverviewSelector.selectCityDetailHourly);
+  public readonly hourlyWeatherDatas$ = this.store.select(cityOverviewSelector.selectCityDetailHourly);
 
   constructor(private readonly store: Store) { }
 }

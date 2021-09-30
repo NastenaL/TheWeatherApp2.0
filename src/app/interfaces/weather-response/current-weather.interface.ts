@@ -1,18 +1,18 @@
 import { Weather } from "./weather.interface";
 
 export interface WeatherInfo {
-    dt: number;
-    sunrise: number;
-    sunset: number;
-    temp: number;
-    feels_like: number;
-    pressure: number;
-    humidity: number;
-    dew_point: number
-    uvi: number;
-    clouds: number;
-    visibility: number;
-    wind_speed: number;
-    wind_deg: number;
-    weather: Weather[];
+    readonly dt: number;
+    readonly sunrise: number;
+    readonly sunset: number;
+    readonly temp: number;
+    readonly feels_like: number;
+    readonly pressure: number;
+    readonly humidity: number;
+    readonly dew_point: number
+    readonly uvi: number;
+    readonly clouds: number;
+    readonly visibility: number;
+    readonly wind_speed: number;
+    readonly wind_deg: number;
+    readonly weather: Weather[];
 }

@@ -1,8 +1,8 @@
 <div *ngIf="(cities$ | async)?.length != 0; else elseBlock">
     <ul>
-        <li *ngFor="let item of cities$ | async">
-            <a routerLink="/{{item.id}}">
-                {{item.name}} {{item.countryCode}} {{item.region}}
+        <li *ngFor="let city of cities$ | async">
+            <a routerLink="/{{city.id}}">
+                {{city.name}} {{city.countryCode}} {{city.region}}
             </a>
         </li>
     </ul>

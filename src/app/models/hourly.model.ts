@@ -1,10 +1,10 @@
 import { Time } from "@angular/common";
 
 export class Hourly {
-    time: Time;
-    temp: number;
-    icon: string;
-    humidity: number;
+    public readonly time: Time;
+    public readonly temp: number;
+    public readonly icon: string;
+    public readonly humidity: number;
 
     constructor(time: Time,
         temp: number,

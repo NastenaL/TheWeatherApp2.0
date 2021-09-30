@@ -1,8 +1,8 @@
 export interface City {
-  id: number,
-  name: string,
-  countryCode: string,
-  region: string,
-  latitude: number,
-  longitude: number
+  readonly id: number,
+  readonly name: string,
+  readonly countryCode: string,
+  readonly region: string,
+  readonly latitude: number,
+  readonly longitude: number
 }

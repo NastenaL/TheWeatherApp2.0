@@ -1,5 +1,5 @@
 <div name="top"  *ngIf="(cityOverview!) != undefined">
-    <h2 class="local-time">LOCAL TIME: {{cityOverview.localTime}}</h2>
+    <h2 class="local-time">LOCAL TIME: {{cityOverview.timezoneOffset  | date:'mediumTime'}}</h2>
     <p>Coordinates: [ {{cityOverview.lat}} ; {{cityOverview.lon}} ] <br/>
         Time zone: {{cityOverview.timezone}}
     </p>

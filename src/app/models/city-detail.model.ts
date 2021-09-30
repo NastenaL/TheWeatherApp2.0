@@ -1,7 +1,7 @@
-import { Hourly } from "../interfaces/weather-details/hourly.interface";
+import { Hourly } from "./hourly.model";
 
 export class CityDetail {
-    hourly: Hourly[];
+    public readonly hourly: Hourly[];
 
     constructor(hourly: Hourly[]) {
         this.hourly = hourly;

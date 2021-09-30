@@ -1,25 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CityOverviewActions, cityOverviewSelector } from 'src/app/store';
-import { LocalTime } from 'src/app/util/clock.util';
 
 @Component({
   selector: 'app-city-overview',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './city-overview-container.component.html',
   styleUrls: ['./city-overview-container.component.css']
 })
 export class CityOverviewComponent implements OnInit {
-  public cityWeather$ = this.store.select(cityOverviewSelector.selectCityOverview);
+  public readonly cityWeather$ = this.store.select(cityOverviewSelector.selectCityOverview);
 
-  constructor(private readonly store: Store, private route: ActivatedRoute) { }
+  constructor(private readonly store: Store) { }
 
   ngOnInit() {
     this.store.dispatch(CityOverviewActions.Load());
-    LocalTime.loadClock();
-  }
-
-  ngOnDestroy() {
-    LocalTime.deleteClock();
   }
 }

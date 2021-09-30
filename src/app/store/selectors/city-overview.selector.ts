@@ -1,9 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Hourly } from 'src/app/interfaces/index';
-import { CityOverview } from 'src/app/models/city-overview.model';
+import { Hourly, CityOverview } from 'src/app/models/index';
 import * as fromCityOverview from '../reducers/city-overview.reducer';
 import { selectRouteParam } from './router.selectors';
-import { searchCitiesSelector } from './search-cities.selectors'
+import { searchCitiesSelector } from './search-cities.selectors';
 
 const selectFeature = createFeatureSelector<fromCityOverview.State>("cityOverview");
 

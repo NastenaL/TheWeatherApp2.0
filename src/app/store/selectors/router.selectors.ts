@@ -1,5 +1,5 @@
 import { getSelectors } from '@ngrx/router-store';
 
-export const {
-  selectRouteParam
-} = getSelectors();
+const selectors = getSelectors();
+console.log(selectors);
+export const { selectRouteParam } = selectors;

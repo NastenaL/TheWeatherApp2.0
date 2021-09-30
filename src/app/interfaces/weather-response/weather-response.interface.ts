@@ -1,11 +1,11 @@
-import { Hourly } from "../weather-details/hourly.interface";
-import { WeatherInfo } from "./current-weather.interface";
+import { Hourly } from "../../models/index";
+import { WeatherInfo } from "../index";
 
 export interface WeatherResponse {
-    lat: number;
-    lon: number;
-    timezone: string;
-    timezone_offset: number;
-    current: WeatherInfo;
-    hourly: Hourly[];
+    readonly lat: number;
+    readonly lon: number;
+    readonly timezone: string;
+    readonly timezone_offset: number;
+    readonly current: WeatherInfo;
+    readonly hourly: Hourly[];
 }

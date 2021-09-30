@@ -1,10 +1,10 @@
-<div *ngIf="(hourlyWeathers$ | async)?.length != 0; else elseBlock">
+<div *ngIf="(hourlyWeatherDatas$ | async)?.length != 0; else elseBlock">
     <div class="hourly">
         <h2>HOURLY</h2>
         <div class="container">
-            <div *ngFor="let hourlyWeather of hourlyWeathers$ | async"
+            <div *ngFor="let hourlyWeatherData of hourlyWeatherDatas$ | async"
                 class="row">
-                <app-hourly-tile [hourlyWeather] = "hourlyWeather"></app-hourly-tile>
+                <app-hourly-tile [hourlyWeatherData] = "hourlyWeatherData"></app-hourly-tile>
             </div>
         </div>
     </div>
