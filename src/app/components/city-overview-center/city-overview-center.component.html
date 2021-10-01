@@ -1,7 +1,7 @@
 <div name="center"  *ngIf="(cityOverview!) != undefined">
     <div class="title">    
         <h3 style="display: inline-block;">Title: {{cityOverview.title}}</h3>
-        <img style="display: inline-block; " src="http://openweathermap.org/img/wn/{{cityOverview.weather.icon}}.png">
+        <img style="display: inline-block; " src="http://openweathermap.org/img/wn/{{cityOverview.weather?.icon}}.png">
     </div>
-    <h4>Subtitle: {{cityOverview!.subtitle}}</h4>
+    <h4>Subtitle: {{cityOverview!.temp | subtitle : cityOverview!.windDeg: cityOverview!.windSpeed}}</h4>
 </div>

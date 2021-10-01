@@ -20,7 +20,7 @@ import {
   CityOverviewCenterComponent
 } from './components'
 import { AppComponent } from './app.component';
-import { KelvinToCelsiusPipe, MeterToKilometerPipe } from './pipes';
+import { KelvinToCelsiusPipe, MeterToKilometerPipe, SubtitlePipe, ToTimeZonePipe } from './pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { actionReducerMap, CityOverviewEffects, SearchCitiesEffects } from './store';
 import { environment } from 'src/environments/environment';
@@ -39,8 +39,9 @@ import { environment } from 'src/environments/environment';
     MeterToKilometerPipe,
     CityOverviewTopComponent,
     CityOverviewCenterComponent,
-    CityOverviewFooterComponent
-
+    CityOverviewFooterComponent,
+    ToTimeZonePipe,
+    SubtitlePipe
   ],
   imports: [
     BrowserModule,

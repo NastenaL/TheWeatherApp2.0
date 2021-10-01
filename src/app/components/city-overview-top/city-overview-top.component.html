@@ -1,6 +1,6 @@
 <div name="top"  *ngIf="(cityOverview!) != undefined">
     <h2 class="local-time">LOCAL TIME: {{localTime$ | async  | date:'mediumTime' : cityOverview.localTime}}</h2>
     <p>Coordinates: [ {{cityOverview.lat}} ; {{cityOverview.lon}} ] <br/>
-        Time zone: {{cityOverview.timezone}}
+        Time zone: {{cityOverview.timezoneOffset | timeZone}}
     </p>
 </div>

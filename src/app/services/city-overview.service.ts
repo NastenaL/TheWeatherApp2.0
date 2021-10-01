@@ -4,6 +4,6 @@ export class CityOverViewService {
     }
 
     public static transformToTimeZone(hoursOffset: number): string {
-        return hoursOffset > 0 ? `+ ${hoursOffset}` : hoursOffset.toString();
+        return hoursOffset > 0 ? `+${hoursOffset}` : hoursOffset.toString();
     }
 }

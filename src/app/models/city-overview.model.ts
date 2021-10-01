@@ -17,14 +17,13 @@ export class CityOverview {
   public readonly windSpeed: number;
   public readonly windDeg: number;
   public readonly temp: number;
-  public readonly localTime: string;
 
   constructor(id: number, weatherResponse: WeatherResponse) {
     this.id = id;
     this.lat = weatherResponse.lat;
     this.lon = weatherResponse.lon;
-    this.timezoneOffset = weatherResponse.timezoneOffset;
-    this.localTime = CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(weatherResponse.timezoneOffset));
+
+    this.timezoneOffset = weatherResponse.timezone_offset;
     this.feelsLike = weatherResponse.current.feelsLike;
     this.humidity = weatherResponse.current.humidity;
     this.uvIndex = weatherResponse.current.uvi;
@@ -36,19 +35,13 @@ export class CityOverview {
     this.windDeg = weatherResponse.current.windDeg;
     this.temp = weatherResponse.current.temp;
   }
-  get timezone(): string {
-    let gtm: number = this.timezoneOffset / 3600;
-    let text: string = "";
-    if (gtm > 0) text = "+" + gtm;
-    return `GTM ${text}`;
+
+  get localTime(): string {
+    console.log(CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(this.timezoneOffset)));
+    return CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(this.timezoneOffset));
   }
 
   get title(): string {
     return `${this.weather.main}, ${this.weather.description}`;
-  }
-
-  get subtitle(): string {
-    let temperature: string = (this.temp - 273.15).toFixed(2) + " °C";
-    return `Low ${temperature}. Wind ${WindDirection.getDirection(this.windDeg)} at ${this.windSpeed} kph`;
   }
 }
