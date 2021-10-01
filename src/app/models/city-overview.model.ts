@@ -1,4 +1,5 @@
 import { WeatherResponse, Weather } from "../interfaces/index";
+import { CityOverViewService } from "../services";
 import { WindDirection } from "../util/wind-direction.util";
 
 export class CityOverview {
@@ -16,13 +17,14 @@ export class CityOverview {
   public readonly windSpeed: number;
   public readonly windDeg: number;
   public readonly temp: number;
+  public readonly localTime: string;
 
   constructor(id: number, weatherResponse: WeatherResponse) {
     this.id = id;
     this.lat = weatherResponse.lat;
     this.lon = weatherResponse.lon;
     this.timezoneOffset = weatherResponse.timezone_offset;
-    console.log(this.timezoneOffset);
+    this.localTime = CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(weatherResponse.timezone_offset));
     this.feelsLike = weatherResponse.current.feels_like;
     this.humidity = weatherResponse.current.humidity;
     this.uvIndex = weatherResponse.current.uvi;
