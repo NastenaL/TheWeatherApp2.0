@@ -23,17 +23,17 @@ export class CityOverview {
     this.id = id;
     this.lat = weatherResponse.lat;
     this.lon = weatherResponse.lon;
-    this.timezoneOffset = weatherResponse.timezone_offset;
-    this.localTime = CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(weatherResponse.timezone_offset));
-    this.feelsLike = weatherResponse.current.feels_like;
+    this.timezoneOffset = weatherResponse.timezoneOffset;
+    this.localTime = CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(weatherResponse.timezoneOffset));
+    this.feelsLike = weatherResponse.current.feelsLike;
     this.humidity = weatherResponse.current.humidity;
     this.uvIndex = weatherResponse.current.uvi;
     this.visibility = weatherResponse.current.visibility;
     this.pressure = weatherResponse.current.pressure;
-    this.dewPoint = weatherResponse.current.dew_point;
+    this.dewPoint = weatherResponse.current.dewPoint;
     this.weather = weatherResponse.current.weather[0];
-    this.windSpeed = weatherResponse.current.wind_speed;
-    this.windDeg = weatherResponse.current.wind_deg;
+    this.windSpeed = weatherResponse.current.windSpeed;
+    this.windDeg = weatherResponse.current.windDeg;
     this.temp = weatherResponse.current.temp;
   }
   get timezone(): string {

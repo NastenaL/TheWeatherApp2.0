@@ -5,7 +5,7 @@ export interface WeatherResponse {
     readonly lat: number;
     readonly lon: number;
     readonly timezone: string;
-    readonly timezone_offset: number;
+    readonly timezoneOffset: number;
     readonly current: WeatherInfo;
     readonly hourly: Hourly[];
 }
