@@ -1,6 +1,9 @@
-<div class="search">
+<div class="search" >
     <h3>Enter city name:</h3>
 
-    <input autoFocus [formControl]="searchTermControl" class="searchInput" minlength="1" maxlength="20"
+    <input autoFocus 
+        [formControl]="searchTermControl" 
+        class="searchInput" 
+        maxlength="20"
         (keyup.enter)="getCityByName()" />
 </div>

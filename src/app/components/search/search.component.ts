@@ -16,6 +16,8 @@ export class SearchComponent {
   constructor(private readonly store: Store) { }
 
   public getCityByName(): void {
-    this.store.dispatch(SearchCitiesActions.Load({ searchTerm: this.searchTermControl.value }));
+    if (this.searchTermControl.value.length > 0) {
+      this.store.dispatch(SearchCitiesActions.Load({ searchTerm: this.searchTermControl.value }));
+    }
   }
 }
