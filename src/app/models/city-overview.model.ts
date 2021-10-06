@@ -24,20 +24,19 @@ export class CityOverview {
     this.lon = weatherResponse.lon;
 
     this.timezoneOffset = weatherResponse.timezone_offset;
-    this.feelsLike = weatherResponse.current.feelsLike;
+    this.feelsLike = weatherResponse.current.feels_like;
     this.humidity = weatherResponse.current.humidity;
     this.uvIndex = weatherResponse.current.uvi;
     this.visibility = weatherResponse.current.visibility;
     this.pressure = weatherResponse.current.pressure;
-    this.dewPoint = weatherResponse.current.dewPoint;
+    this.dewPoint = weatherResponse.current.dew_point;
     this.weather = weatherResponse.current.weather[0];
-    this.windSpeed = weatherResponse.current.windSpeed;
-    this.windDeg = weatherResponse.current.windDeg;
+    this.windSpeed = weatherResponse.current.wind_speed;
+    this.windDeg = weatherResponse.current.wind_deg;
     this.temp = weatherResponse.current.temp;
   }
 
   get localTime(): string {
-    console.log(CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(this.timezoneOffset)));
     return CityOverViewService.transformToTimeZone(CityOverViewService.transformToHours(this.timezoneOffset));
   }
 

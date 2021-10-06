@@ -5,14 +5,14 @@ export interface WeatherInfo {
     readonly sunrise: number;
     readonly sunset: number;
     readonly temp: number;
-    readonly feelsLike: number;
+    readonly feels_like: number;
     readonly pressure: number;
     readonly humidity: number;
-    readonly dewPoint: number
+    readonly dew_point: number
     readonly uvi: number;
     readonly clouds: number;
     readonly visibility: number;
-    readonly windSpeed: number;
-    readonly windDeg: number;
+    readonly wind_speed: number;
+    readonly wind_deg: number;
     readonly weather: Weather[];
 }
