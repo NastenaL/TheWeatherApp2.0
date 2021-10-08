@@ -1,6 +1,5 @@
 import { WeatherResponse, Weather } from "../interfaces/index";
 import { CityOverViewService } from "../services";
-import { WindDirection } from "../util/wind-direction.util";
 
 export class CityOverview {
   public readonly id: number;

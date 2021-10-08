@@ -1,4 +1,5 @@
 <div class="block"  *ngIf="(hourlyWeatherData!) != undefined">
     {{hourlyWeatherData.temp | convertToCelsius}}
     {{hourlyWeatherData.humidity}} %
+    {{hourlyWeatherData.dt | date:'mediumTime'}}
 </div>

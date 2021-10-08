@@ -41,8 +41,7 @@ const selectCityOverview = createSelector(
 
 const selectCityDetailHourly = createSelector(
   selectWeather,
-  selectCity,
-  (cityOverview, cityId) => {
+  (cityOverview) => {
     if (cityOverview) {
       return cityOverview.hourly;
     }
